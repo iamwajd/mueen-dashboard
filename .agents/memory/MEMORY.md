@@ -1,0 +1,1 @@
+- [MUEEN demo data](mueen-demo-data.md) — the graduation dashboard uses illustrative crowd, risk, unit, and alert data, not real operations feeds.

@@ -1,0 +1,27 @@
+Act as an expert Frontend Developer and UI/UX Engineer. I want you to build a live interactive security monitoring dashboard for my graduation project "مُعين" (Mueen), a smart security assistant for crowd management and risk prediction in the Holy Mosque of Makkah.
+
+Please update/implement the dashboard with the following features and interactive logic:
+
+1. Map Interface (Dark Operations Center Style):
+   - Center on the Holy Mosque of Makkah (Coordinates: 21.4225, 39.8262) using Leaflet.js or Mapbox with a dark theme.
+   - Heatmap / Pulse density layers at major gates (King Fahd - High/Red, East Plaza - Medium/Yellow, Ajyad - Low/Green).
+   - Live interactive pins: Blue shields for Security Units, Red warning markers for Active Visitor Emergency Reports.
+
+2. Automated & Manual Report Lifecycle Logic (Crucial):
+   - Automated Timer (Simulated Auto-Resolution): When an emergency report (Red Marker) is generated, start a visible timer (e.g., 30-45 seconds countdown for simulation). Once the timer expires, automatically update the report status to "تم الإنجاز" (Resolved), change its marker color to Gray/Green, and clear the active alert status to reduce UI clutter.
+   - Manual Override Controls:
+     a) Clicking on any report marker opens a popup/modal with action buttons:
+        - "تكليف أمني" (Dispatch/Assign Unit Manually): Allows selecting an available security officer/unit.
+        - "تغيير إلى منجز" (Mark as Resolved Manually): Instantly closes the report without waiting for the auto-timer.
+        - "إلغاء البلاغ" (Dismiss Alert).
+     b) Provide a live list/feed of "البلاغات النشطة" (Active Incidents) in the sidebar with filter tabs: [الكل, النشطة, المنجزة].
+
+3. Dashboard Layout & UI Style:
+   - Modern Command-Center UI with Tailwind CSS.
+   - Brand Colors: Emerald Green (#064E3B), Cream (#E5DFD3), Accent Red (#EF4444), Accent Yellow (#F59E0B), and Dark Backgrounds.
+   - Top Header with "مُعين" logo, system clock, and a pulsing "LIVE MONITORING" status badge.
+   - Real-time statistics counters (Active Reports, Resolved Reports, Total On-field Units, Risk Status).
+
+4. Code Structure:
+   - Clean, modular JavaScript/React code with state management for reports and timers.
+   - Include realistic mock data and interval triggers to demonstrate live automatic status updates during testing.

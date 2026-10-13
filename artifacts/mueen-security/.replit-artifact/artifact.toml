@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "MUEEN Security Support"
+description = "A bilingual security operations prototype for Al-Masjid Al-Haram, with separate operations monitoring, staff dispatch, and guest incident reporting experiences powered by simulated data."
+version = "1.0.0"
+id = "artifacts/mueen-security"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19990
+
+[services.development]
+run = "pnpm --filter @workspace/mueen-security run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mueen-security", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/mueen-security/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19990"
+BASE_PATH = "/"
